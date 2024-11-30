@@ -1,6 +1,7 @@
 # Real-Time Form Submission App
 
-This is a real-time form submission app that uses **WebSockets** and **Express** to send and receive form data dynamically between the client and server. The app captures user information (Name, Phone Number, Email, and Gender) and displays it in real-time without needing to refresh the page.
+This is a real-time form submission app that uses **WebSockets** and **Express** to send and receive form data dynamically between the client and server. The app captures user information (Name, Phone Number, Email, and Gender) and displays it in a list. When multiple clients are opened, the list is synchronized and displays the updated data across all clients.
+This project uses **Express** to create the web server and **WebSocket** (via the socket.io library) for real-time communication between the server and clients
 
 ## Features
 - **Real-time updates**: The list of submitted data is updated dynamically when new form entries are submitted.
@@ -16,13 +17,15 @@ This is a real-time form submission app that uses **WebSockets** and **Express**
 
 ## How to Set Up Locally
 
-### Prerequisites
+### Prerequisites & Installation
 Before running the app locally, ensure you have **Node.js** and **npm** installed.
 
 1. Install Node.js from the [official website](https://nodejs.org/).
 
-2. Clone this repository or download the files.
-
+2. Clone the repository: Clone or download the project to your local machine:
+   ```bash
+   git clone https://github.com/bassanttamer3/Iot_Lab.git
+   ```
 3. Navigate to the project directory and install the required dependencies:
 
    ```bash
@@ -50,13 +53,13 @@ the following message should appear in the log:
 
 ## How It Works
 
-1. Frontend (Client-side):
+1. **Frontend (Client-side)**:
 
 - The user fills out a form with their name, phone number, email, and gender.
 - Upon form submission, the data is sent to the server using WebSockets via Socket.io.
 - The list of submissions is updated dynamically on the page without needing a page reload.
 
-2. Backend (Server-side):
+2. **Backend (Server-side)**:
 
 - The server listens for incoming form submissions through WebSockets.
 - When a new submission is received, it is added to the submissions array.
