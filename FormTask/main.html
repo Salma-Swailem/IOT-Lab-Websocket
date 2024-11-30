@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>IOT Lab Form Task</h1>
+    </div>
+
+    <div class="form-container">
+      <div class="Form">
+        <form id="myForm">
+          <label for="userName">User Name</label>
+          <input
+            id="userName"
+            name="userName"
+            type="text"
+            placeholder="EX: John Doe"
+            required
+          />
+          <br />
+          <label for="number">Phone Number</label>
+          <input
+            id="number"
+            name="number"
+            type="tel"
+            placeholder="EX: 201234567890"
+            pattern="^\+?[0-9\s\-]{7,15}$"
+            required
+          />
+          <br />
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="EX: johndoe@gmail.com"
+            required
+          />
+          <br />
+          <label>Gender</label>
+          <div class="gender-group">
+            <label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="Male"
+                required
+              />
+              Male
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="Female"
+                required
+              />
+              Female
+            </label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div id="submissions">
+        <h2>Submitted Data:</h2>
+        <ul id="submissionList"></ul>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Salma Osama - Section 1</p>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
